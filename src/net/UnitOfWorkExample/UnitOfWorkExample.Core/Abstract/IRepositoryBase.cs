@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace UnitOfWorkExample.Core;
+﻿namespace UnitOfWorkExample.Core.Abstract;
 
 public interface IRepositoryBase<TEntity>
     where TEntity : class, new()

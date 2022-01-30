@@ -1,24 +1,22 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
+﻿namespace UnitOfWorkExample.Core.Concrete;
 
-namespace UnitOfWorkExample.Core;
-
-public class UnitOfWorkBase
+public class UnitOfWorkBase<TDbContext>
     : IDisposable
+    where TDbContext : DbContext, new()
 {
-    protected DbContext context;
+    protected TDbContext context;
     private Dictionary<string, object> repos;
     private bool disposed;
     private IDbContextTransaction? transaction;
 
-    public UnitOfWorkBase(DbContext context)
+    public UnitOfWorkBase(TDbContext context)
     {
         this.context = context;
         this.repos = new Dictionary<string, object>();
         this.disposed = false;
     }
 
-    public async Task<UnitOfWorkBase> BeginTransactionAsync()
+    public async Task<UnitOfWorkBase<TDbContext>> BeginTransactionAsync()
     {
         this.transaction = await context.Database.BeginTransactionAsync();
         return await Task.FromResult(this);

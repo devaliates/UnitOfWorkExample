@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-using System.Linq.Expressions;
-
-namespace UnitOfWorkExample.Core;
+﻿namespace UnitOfWorkExample.Core.Concrete;
 
 public class EfRepositoryBase<TEntity, TDbContext>
     : IRepositoryBase<TEntity>
