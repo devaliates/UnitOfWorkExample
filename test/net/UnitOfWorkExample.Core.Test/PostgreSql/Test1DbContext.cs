@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-using UnitOfWorkExample.Core.Test.Entities;
-
-namespace UnitOfWorkExample.Core.Test.PostgreSql;
+﻿namespace UnitOfWorkExample.Core.Test.PostgreSql;
 
 public class Test1DbContext
     : DbContext

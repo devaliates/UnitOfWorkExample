@@ -1,14 +1,9 @@
-﻿using UnitOfWorkExample.Core.Abstract;
-using UnitOfWorkExample.Core.Concrete;
-using UnitOfWorkExample.Core.Test.Abstract;
-
-namespace UnitOfWorkExample.Core.Test.PostgreSql;
+﻿namespace UnitOfWorkExample.Core.Test.PostgreSql;
 
 public class Test1UOW
     : UnitOfWorkBase<Test1DbContext>
     , IUnitOfWork
 {
-    private IUserRepository userRepository;
     public IUserRepository UserRepository
     {
         get
@@ -18,6 +13,7 @@ public class Test1UOW
             return this.userRepository;
         }
     }
+    private IUserRepository userRepository;
 
     public Test1UOW(Test1DbContext context) : base(context)
     {

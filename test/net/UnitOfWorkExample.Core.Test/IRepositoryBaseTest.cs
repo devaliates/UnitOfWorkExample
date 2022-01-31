@@ -1,9 +1,4 @@
-﻿using NUnit.Framework;
-
-using UnitOfWorkExample.Core.Test.Entities;
-using UnitOfWorkExample.Core.Test.PostgreSql;
-
-namespace UnitOfWorkExample.Core.Test;
+﻿namespace UnitOfWorkExample.Core.Test;
 
 public class IRepositoryBaseTest
 {
