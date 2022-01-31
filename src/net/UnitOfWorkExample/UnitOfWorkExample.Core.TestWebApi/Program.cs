@@ -11,8 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ILocalDbContext, LocalDbContext>(x => x.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")
-    , b => b.MigrationsAssembly(Assembly.GetEntryAssembly().GetName().ToString())));
+builder.Services.AddDbContext<ILocalDbContext, LocalDbContext>(x => x.UseNpgsql(builder.Configuration.GetConnectionString("LocalConnection")
+    ));
+
+builder.Services.AddDbContext<IAzureDbContext, AzureDbContext>(x => x.UseNpgsql(builder.Configuration.GetConnectionString("AzureConnection")
+    ));
 
 var app = builder.Build();
 
