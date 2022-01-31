@@ -80,4 +80,12 @@ public class EfRepositoryBase<TEntity, TDbContext>
         }
         await Task.CompletedTask;
     }
+
+    public async Task Save()
+    {
+        int r = await this.context.SaveChangesAsync();
+
+        if (r < 0)
+            throw new Exception("Save error!");
+    }
 }

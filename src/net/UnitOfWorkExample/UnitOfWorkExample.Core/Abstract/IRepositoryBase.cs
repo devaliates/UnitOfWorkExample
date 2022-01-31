@@ -1,7 +1,7 @@
 ﻿namespace UnitOfWorkExample.Core.Abstract;
 
 /// <summary>
-/// 
+///
 /// </summary>
 /// <typeparam name="TEntity"></typeparam>
 /// <typeparam name="TDbContext">
@@ -23,4 +23,6 @@ public interface IRepositoryBase<TEntity, TDbContext>
     public Task Update(TEntity entity);
 
     public Task Delete(TEntity entity, string? propName);
+
+    public Task Save();
 }
