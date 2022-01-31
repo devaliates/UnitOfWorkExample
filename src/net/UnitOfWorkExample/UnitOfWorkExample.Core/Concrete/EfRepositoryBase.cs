@@ -1,13 +1,14 @@
 ﻿namespace UnitOfWorkExample.Core.Concrete;
 
-public class EfRepositoryBase<TEntity>
-    : IRepositoryBase<TEntity>
+public class EfRepositoryBase<TEntity, TDbContext>
+    : IRepositoryBase<TEntity, TDbContext>
     where TEntity : class, new()
+    where TDbContext : DbContext, new()
 {
-    private readonly DbContext context;
+    private readonly TDbContext context;
     private readonly DbSet<TEntity> dbSet;
 
-    public EfRepositoryBase(DbContext context)
+    public EfRepositoryBase(TDbContext context)
     {
         this.context = context;
         this.dbSet = context.Set<TEntity>();
