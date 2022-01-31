@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32104.313
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitOfWorkExample.Core", "UnitOfWorkExample.Core\UnitOfWorkExample.Core.csproj", "{D8A76A00-25FA-4482-8FA7-AE668C9FFC02}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitOfWorkExample.Core.Test", "..\..\..\test\net\UnitOfWorkExample.Core.Test\UnitOfWorkExample.Core.Test.csproj", "{0E6FA6B4-0904-45A0-B926-40F06409DE45}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkExample.RepositoryLayer", "UnitOfWorkExample.RepositoryLayer\UnitOfWorkExample.RepositoryLayer.csproj", "{7DBC1649-C0D1-42E4-B3B1-A08305251B89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkExample.Core.TestWebApi", "UnitOfWorkExample.Core.TestWebApi\UnitOfWorkExample.Core.TestWebApi.csproj", "{F770DF00-FAD4-4319-A844-FC1AFF475577}"
@@ -21,10 +19,6 @@ Global
 		{D8A76A00-25FA-4482-8FA7-AE668C9FFC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8A76A00-25FA-4482-8FA7-AE668C9FFC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8A76A00-25FA-4482-8FA7-AE668C9FFC02}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E6FA6B4-0904-45A0-B926-40F06409DE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E6FA6B4-0904-45A0-B926-40F06409DE45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E6FA6B4-0904-45A0-B926-40F06409DE45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E6FA6B4-0904-45A0-B926-40F06409DE45}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7DBC1649-C0D1-42E4-B3B1-A08305251B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7DBC1649-C0D1-42E4-B3B1-A08305251B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DBC1649-C0D1-42E4-B3B1-A08305251B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
