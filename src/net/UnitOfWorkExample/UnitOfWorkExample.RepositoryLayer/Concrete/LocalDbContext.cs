@@ -1,6 +1,4 @@
-﻿using Entities;
-
-namespace UnitOfWorkExample.RepositoryLayer.Concrete;
+﻿namespace UnitOfWorkExample.RepositoryLayer.Concrete;
 
 public class LocalDbContext
     : DbContext, ILocalDbContext
