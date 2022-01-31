@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UnitOfWorkExample.Core\UnitOfWorkExample.Core.csproj" />
+    <ProjectReference Include="..\RepWork\RepWork.csproj" />
   </ItemGroup>
 
 </Project>
