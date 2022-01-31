@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 
-using UnitOfWorkExample.Core.Abstract;
 using UnitOfWorkExample.Core.Test.Entities;
 using UnitOfWorkExample.Core.Test.PostgreSql;
 
@@ -30,5 +29,7 @@ public class IRepositoryBaseTest
         this.test1UOW.UserRepository.Insert(user).Wait();
 
         this.test1UOW.Save().Wait();
+
+        Assert.NotZero(user.Id);
     }
 }
