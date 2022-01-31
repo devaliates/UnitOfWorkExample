@@ -5,14 +5,12 @@ public class UnitOfWorkBase<TDbContext>
     where TDbContext : DbContext, new()
 {
     protected TDbContext context;
-    private Dictionary<string, object> repos;
     private bool disposed;
     private IDbContextTransaction? transaction;
 
     public UnitOfWorkBase(TDbContext context)
     {
         this.context = context;
-        this.repos = new Dictionary<string, object>();
         this.disposed = false;
     }
 
