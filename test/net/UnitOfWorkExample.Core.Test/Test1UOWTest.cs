@@ -13,18 +13,18 @@ public class Test1UOWTest
     [Test]
     public void ADD_USER()
     {
-        User user = new User()
-        {
-            Username = "Ali",
-            Password = "Ateş",
-        };
+        //User user = new User()
+        //{
+        //    Username = "Ali",
+        //    Password = "Ateş",
+        //};
 
-        var r = this.test1UOW.BeginTransactionAsync().Result;
+        //var r = this.test1UOW.BeginTransactionAsync().Result;
 
-        this.test1UOW.UserRepository.Insert(user).Wait();
+        //this.test1UOW.UserRepository.Insert(user).Wait();
 
-        this.test1UOW.Save().Wait();
+        //this.test1UOW.Save().Wait();
 
-        Assert.NotZero(user.Id);
+        //Assert.NotZero(user.Id);
     }
 }

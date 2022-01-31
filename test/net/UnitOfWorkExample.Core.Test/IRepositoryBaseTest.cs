@@ -2,12 +2,9 @@
 
 public class IRepositoryBaseTest
 {
-    private Test1UOW test1UOW;
-
     [OneTimeSetUp]
     public void Setup()
     {
-        this.test1UOW = new Test1UOW(new Test1DbContext());
     }
 
     [Test]
@@ -18,12 +15,6 @@ public class IRepositoryBaseTest
             Username = "Ali",
             Password = "Ateş",
         };
-
-        var r = this.test1UOW.BeginTransactionAsync().Result;
-
-        this.test1UOW.UserRepository.Insert(user).Wait();
-
-        this.test1UOW.Save().Wait();
 
         Assert.NotZero(user.Id);
     }
