@@ -1,20 +1,19 @@
 ﻿namespace UnitOfWorkExample.Core.Concrete;
 
-public class EfRepositoryBase<TEntity, TDbContext>
+public class EfRepositoryBase<TEntity>
     : IRepositoryBase<TEntity>
     where TEntity : class, new()
-    where TDbContext : DbContext, new()
 {
-    private readonly TDbContext context;
+    private readonly DbContext context;
     private readonly DbSet<TEntity> dbSet;
 
-    public EfRepositoryBase(TDbContext context)
+    public EfRepositoryBase(DbContext context)
     {
         this.context = context;
         this.dbSet = context.Set<TEntity>();
     }
 
-    public async virtual Task<IEnumerable<TEntity>> Get(
+    public virtual async Task<IEnumerable<TEntity>> Get(
         Expression<Func<TEntity, bool>>? filter = null,
         Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
         string includeProperties = "")
@@ -42,25 +41,25 @@ public class EfRepositoryBase<TEntity, TDbContext>
         }
     }
 
-    public async virtual Task<TEntity> Get(Expression<Func<TEntity, bool>> filter)
+    public virtual async Task<TEntity> Get(Expression<Func<TEntity, bool>> filter)
     {
         return await dbSet.SingleAsync(filter);
     }
 
-    public async virtual Task Insert(TEntity entity)
+    public virtual async Task Insert(TEntity entity)
     {
         await dbSet.AddAsync(entity);
         await Task.CompletedTask;
     }
 
-    public async virtual Task Update(TEntity entity)
+    public virtual async Task Update(TEntity entity)
     {
         dbSet.Attach(entity);
         context.Entry(entity).State = EntityState.Modified;
         await Task.CompletedTask;
     }
 
-    public async virtual Task Delete(TEntity entity, string? propName)
+    public virtual async Task Delete(TEntity entity, string? propName)
     {
         if (propName != null)
         {
