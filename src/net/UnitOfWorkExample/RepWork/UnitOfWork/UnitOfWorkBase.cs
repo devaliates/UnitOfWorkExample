@@ -1,7 +1,7 @@
-﻿namespace RepWork.Concrete;
+﻿namespace RepWork.UnitOfWork;
 
 public class UnitOfWorkBase<TDbContext>
-    : IDisposable
+    : IUnitOfWork
     where TDbContext : DbContext, new()
 {
     protected TDbContext context;

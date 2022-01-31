@@ -3,4 +3,5 @@
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Storage;
 
-global using RepWork.Abstract;
+global using RepWork.Abstract.Repository;
+global using RepWork.Abstract.UnitOfWork;

@@ -1,7 +1,7 @@
-﻿namespace RepWork.Concrete;
+﻿namespace RepWork.Repository.EntityFrameworkCore;
 
 public class EfRepositoryBase<TEntity, TDbContext>
-    : IRepositoryBase<TEntity, TDbContext>
+    : IRepositoryBase<TEntity>
     where TEntity : class, new()
     where TDbContext : DbContext, new()
 {

@@ -1,14 +1,14 @@
-﻿namespace RepWork.Abstract;
+﻿namespace RepWork.Abstract.Repository;
 
 /// <summary>
-///
+/// Generic Repository
 /// </summary>
 /// <typeparam name="TEntity"></typeparam>
 /// <typeparam name="TDbContext">
 /// Farklı DbContextleri DI yapmayı sağlar.
 /// Eğer iki farklı DbContext varsa TDbContext ile ayrıla bilir.
 /// </typeparam>
-public interface IRepositoryBase<TEntity, TDbContext>
+public interface IRepositoryBase<TEntity>
     where TEntity : class, new()
 {
     public Task<IEnumerable<TEntity>> Get(
